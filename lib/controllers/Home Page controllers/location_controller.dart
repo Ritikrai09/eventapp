@@ -38,7 +38,7 @@ class LocationController{
     List<Placemark> placemarks = await placemarkFromCoordinates(pos.latitude, pos.longitude);
     if(placemarks.isNotEmpty){
 
-      lc.locality="${placemarks[0].locality.toString()}, ${placemarks[0].street.toString()}";
+      lc.locality="${placemarks[0].street.toString()}, ${placemarks[0].subLocality.toString()}, ${placemarks[0].locality.toString()}, ${placemarks[0].administrativeArea.toString()}";
       lc.country=placemarks[0].country.toString();
 
     }else{

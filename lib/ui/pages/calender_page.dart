@@ -25,7 +25,7 @@ class _CalendarPageState extends State<CalendarPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Event Calendar'),
+        title: const Text('Event Calendar'),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -41,13 +41,13 @@ class _CalendarPageState extends State<CalendarPage> {
                   return Container(
                     margin: const EdgeInsets.all(4.0),
                     alignment: Alignment.center,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.blue,
                       shape: BoxShape.circle,
                     ),
                     child: Text(
                       date.day.toString(),
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                     ),
                   );
                 },
@@ -57,7 +57,7 @@ class _CalendarPageState extends State<CalendarPage> {
                 _handleDaySelection(date, events, holidays);
               },*/
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             _buildEventList(),
           ],
         ),
@@ -75,7 +75,7 @@ class _CalendarPageState extends State<CalendarPage> {
     final selectedDayEvents = _events[DateTime.now()] ?? [];
 
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: selectedDayEvents
